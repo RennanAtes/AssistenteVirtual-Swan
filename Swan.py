@@ -18,4 +18,14 @@ def Reconhecimento():
         print ("Nenhum som foi reconhecido.")
         return "None"
     return query
+def Tratamento(SwanFala):
+    Quebrar = SwanFala.split()
+    QuantasPalavras = len(Quebrar)
+    Swan = []
+    for i in range (0,QuantasPalavras):
+        Quebrar[i] = Quebrar[i].lower()
+        Swan.append(Quebrar[i])
+    print (Swan)
+    texto.formatando(Swan,SwanFala)
+
 Reconhecimento()
