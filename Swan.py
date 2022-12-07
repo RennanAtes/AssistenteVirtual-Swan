@@ -1,3 +1,5 @@
+import speech_recognition as sr
+import texto
 def Reconhecimento():
     r = sr.Recognizer()
     with sr.Microphone() as source:
