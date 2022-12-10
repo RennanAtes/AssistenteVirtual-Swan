@@ -28,4 +28,17 @@ def Tratamento(SwanFala):
     print (Swan)
     texto.formatando(Swan,SwanFala)
 
-Reconhecimento()
+while True:
+    def Looping():
+        r = sr.Recognizer()
+        with sr.Microphone() as source:
+            print("Reconhecendo...")
+            audio = r.listen(source, phrase_time_limit=2)
+        try:
+            query = r.recognize_google(audio, language='en-us')
+            print (query)
+            if 'okay swan' in query:
+                Reconhecimento()
+        except Exception as e:
+            Looping()
+    Looping()
