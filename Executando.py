@@ -2,6 +2,7 @@
 import webbrowser
 import subprocess
 from gtts import gTTS
+import pesquisaNoGoogle
 from playsound import playsound
 google = "C:\Program Files\Google\Chrome\Application\chrome.exe"
 def Executar(Swan,chave,SwanFala):
@@ -14,8 +15,8 @@ def Executar(Swan,chave,SwanFala):
         abrir(Swan)
     elif chave == "fechar":
         fechar(Swan)
-    else:
-        print ('')
+    elif chave == "pergunta":
+        pergunta(Swan)
 
         
 def pesquisa(Swan):
@@ -62,3 +63,8 @@ def criando_audio(audio):
     tts.save('audios/audio.mp3')
     print("Aprendendo oque você está falando.")
     playsound('audios/audio.mp3')
+
+def pergunta(Swan):
+    pergunta =  ' '.join(Swan)
+    resposta = pesquisaNoGoogle.obtendoResposta(pergunta)
+    criando_audio(resposta)

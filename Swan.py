@@ -37,7 +37,7 @@ while True:
         try:
             query = r.recognize_google(audio, language='en-us')
             print (query)
-            if 'okay swan' in query:
+            if 'swan' in query:
                 Reconhecimento()
         except Exception as e:
             Looping()

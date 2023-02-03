@@ -53,6 +53,11 @@ def formatando(Swan,SwanFala):
         print ("A função fechar foi chamada")
         chave = 'calcular'
         Calcular(Swan,chave)
+    else:
+        print ("A função pesquisar foi chamada")
+        chave = 'pergunta'
+        Executando.Executar(Swan,chave,SwanFala)
+
 
 
 def Calcular(Swan,chave):
