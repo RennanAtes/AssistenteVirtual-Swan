@@ -65,7 +65,6 @@ def Calcular(Swan,chave):
     Swan2 = Swan
     a = len(Swan)
     for i in range (0,a):
-
         if 'x' == Swan[i]:
             Swan[i] = '*'
         c = re.sub('[^0-9,+,-,/,*]', '', Swan2[i])

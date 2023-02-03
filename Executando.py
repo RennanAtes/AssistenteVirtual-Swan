@@ -24,7 +24,7 @@ def pesquisa(Swan):
     Swan2 = Swan
     if Swan[0] in PalavraDeletarChave:
         Swan2.remove(Swan[0])
-    Apesquisa =  ' '.join(Swan2)
+    Apesquisa =  ''.join(Swan2)
     print (Apesquisa)
     webbrowser.get('windows-default').open_new('https://www.google.com.br/search?q=' + f'{Apesquisa}')
 def youtube(Swan):
@@ -65,6 +65,13 @@ def criando_audio(audio):
     playsound('audios/audio.mp3')
 
 def pergunta(Swan):
-    pergunta =  ' '.join(Swan)
-    resposta = pesquisaNoGoogle.obtendoResposta(pergunta)
-    criando_audio(resposta)
+    pergunta =  ''.join(Swan)
+    resposta = pesquisaNoGoogle.obtendoResposta(pergunta,Swan)
+    print(resposta)
+    if resposta:
+        criando_audio(resposta)
+    else:
+        criando_audio(Swan)
+
+if __name__ == '__main__':
+    pergunta('Como fazer café')
